@@ -101,6 +101,27 @@ namespace Task9v5
             }
             Console.WriteLine($"size = {size}");
 
+            int[] S = new int[size];
+            int SArrayStep = 0;
+
+            for (int i = 0; i < X.Length; i++)
+            {
+                for (int j = 0; j < Y.Length; j++)
+                {
+                    if (X[i] == Y[j])
+                    {
+                        S[SArrayStep] = X[i];
+                        SArrayStep++;
+                    }
+                }
+            }
+
+            for (int i = 0; i < S.Length; i++)
+            {
+                Console.Write($"{S[i]} ");
+            }
+            Console.WriteLine();
+
 
             //* Дано дробное число в двоичной системе счисления, т.е. последователь-
             //* ность цифр 0 и 1, разделенных точкой. Составить программу перевода 
