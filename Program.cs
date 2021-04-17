@@ -16,7 +16,7 @@ namespace Task9v5
             int minIndex = 0;
             int maxIndex = 0;
 
-            for (int i = 0; i < arrayInt.Length; i++)
+            /*for (int i = 0; i < arrayInt.Length; i++)
             {
                 arrayInt[i] = random.Next(100);
                 Console.Write($"{arrayInt[i]} ");
@@ -61,7 +61,50 @@ namespace Task9v5
             }
 
             Console.WriteLine();
-            Console.WriteLine($"Max = {maxNumber} Min = {minNumber}");
+            Console.WriteLine($"Max = {maxNumber} Min = {minNumber}");*/
+
+            //* Ввести два массива X и Y, состоящих из 10-ти элементов целого типа. 
+            //* Сформировать массив S, состоящий из одинаковых элементов исходных 
+            //* массивов.
+
+            int[] X = new int[10];
+            int[] Y = new int[10];
+            int size = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                X[i] = random.Next(160 / 2);
+                Y[i] = random.Next(160 / 2);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"{X[i]} ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"{Y[i]} ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < X.Length; i++)
+            {
+                for (int j = 0; j < Y.Length; j++)
+                {
+                    if (X[i] == Y[j])
+                    {
+                        size++;
+                    }
+                }
+            }
+            Console.WriteLine($"size = {size}");
+
+
+            //* Дано дробное число в двоичной системе счисления, т.е. последователь-
+            //* ность цифр 0 и 1, разделенных точкой. Составить программу перевода 
+            //* этого числа в восьмеричную систему счисления.
         }
     }
 }
