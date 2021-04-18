@@ -138,7 +138,8 @@ namespace Task9v5
             int temp = wholePartNumber;
             int tempWholeNumber = wholePartNumber;
             int size = 0;
-            double decimalNumber = 0;
+            int decimalNumber = 0;
+            int octalNumber = 0;
 
             //Console.WriteLine($"{wholePartNumber}");
 
@@ -163,11 +164,21 @@ namespace Task9v5
                 //Console.WriteLine($"{wholePartNumberArray[i]}");
                 if (wholePartNumberArray[i] == 1)
                 {
-                    decimalNumber += Math.Pow(2, i);
+                    decimalNumber += (int)Math.Pow(2, i);
                 }
 
             }
             Console.WriteLine($"{decimalNumber}");
+            int tempDecimalNumber = decimalNumber;
+            int step = 0;
+
+            while (tempDecimalNumber > 0)
+            {
+                octalNumber += (int)(tempDecimalNumber % 8 * Math.Pow(10, step++));
+                tempDecimalNumber /= 8;
+            }
+            Console.WriteLine($"{octalNumber}");
+
 
         }
     }
