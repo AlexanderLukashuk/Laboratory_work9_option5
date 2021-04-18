@@ -135,6 +135,7 @@ namespace Task9v5
             //Console.WriteLine(Convert.ToString(Convert.ToInt32(binaryNumber, 2), 8));
             int wholePartNumber = (int)binaryNumber;
             double fractionalPartNumber = binaryNumber - wholePartNumber;
+            fractionalPartNumber = Math.Round(fractionalPartNumber, 8);
             int temp = wholePartNumber;
             int tempWholeNumber = wholePartNumber;
             int size = 0;
@@ -152,6 +153,9 @@ namespace Task9v5
                 //Console.WriteLine($"{tempWholeNumber}");
                 //Console.WriteLine($"{size}");
             }
+
+            Console.WriteLine($"{fractionalPartNumber}");
+            Console.WriteLine($"{fractionalPartNumber % 10}");
 
             int[] wholePartNumberArray = new int[size];
             tempWholeNumber = wholePartNumber;
