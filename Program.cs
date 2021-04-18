@@ -138,6 +138,7 @@ namespace Task9v5
             int temp = wholePartNumber;
             int tempWholeNumber = wholePartNumber;
             int size = 0;
+            double decimalNumber = 0;
 
             //Console.WriteLine($"{wholePartNumber}");
 
@@ -147,8 +148,8 @@ namespace Task9v5
             {
                 tempWholeNumber /= 10;
                 size++;
-                Console.WriteLine($"{tempWholeNumber}");
-                Console.WriteLine($"{size}");
+                //Console.WriteLine($"{tempWholeNumber}");
+                //Console.WriteLine($"{size}");
             }
 
             int[] wholePartNumberArray = new int[size];
@@ -157,8 +158,16 @@ namespace Task9v5
             for (int i = 0; i < wholePartNumberArray.Length; i++)
             {
                 wholePartNumberArray[i] = tempWholeNumber % 10;
+                //wholePartNumberArray[i] = Math.Pow(temp, (i + 1));
                 tempWholeNumber /= 10;
+                //Console.WriteLine($"{wholePartNumberArray[i]}");
+                if (wholePartNumberArray[i] == 1)
+                {
+                    decimalNumber += Math.Pow(2, i);
+                }
+
             }
+            Console.WriteLine($"{decimalNumber}");
 
         }
     }
