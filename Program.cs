@@ -67,7 +67,7 @@ namespace Task9v5
             //* Сформировать массив S, состоящий из одинаковых элементов исходных 
             //* массивов.
 
-            int[] X = new int[10];
+            /*int[] X = new int[10];
             int[] Y = new int[10];
             int size = 0;
 
@@ -120,12 +120,46 @@ namespace Task9v5
             {
                 Console.Write($"{S[i]} ");
             }
-            Console.WriteLine();
+            Console.WriteLine();*/
 
 
             //* Дано дробное число в двоичной системе счисления, т.е. последователь-
             //* ность цифр 0 и 1, разделенных точкой. Составить программу перевода 
             //* этого числа в восьмеричную систему счисления.
+
+            double binaryNumber = 10001.01010010; //17.32
+            string strNumber = binaryNumber.ToString();
+            //double octalNumber = Convert.ToDouble(binaryNumber, 8);
+            //long value = Convert.ToInt32(binaryNumber, 2);
+            //string hexValue = Convert.ToString(binaryNumber, 8);
+            //Console.WriteLine(Convert.ToString(Convert.ToInt32(binaryNumber, 2), 8));
+            int wholePartNumber = (int)binaryNumber;
+            double fractionalPartNumber = binaryNumber - wholePartNumber;
+            int temp = wholePartNumber;
+            int tempWholeNumber = wholePartNumber;
+            int size = 0;
+
+            //Console.WriteLine($"{wholePartNumber}");
+
+            //Console.WriteLine($"{(wholePartNumber / 10) % 10}");
+
+            while (tempWholeNumber > 0)
+            {
+                tempWholeNumber /= 10;
+                size++;
+                Console.WriteLine($"{tempWholeNumber}");
+                Console.WriteLine($"{size}");
+            }
+
+            int[] wholePartNumberArray = new int[size];
+            tempWholeNumber = wholePartNumber;
+
+            for (int i = 0; i < wholePartNumberArray.Length; i++)
+            {
+                wholePartNumberArray[i] = tempWholeNumber % 10;
+                tempWholeNumber /= 10;
+            }
+
         }
     }
 }
