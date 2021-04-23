@@ -16,7 +16,7 @@ namespace Task9v5
             int minIndex = 0;
             int maxIndex = 0;
 
-            /*for (int i = 0; i < arrayInt.Length; i++)
+            for (int i = 0; i < arrayInt.Length; i++)
             {
                 arrayInt[i] = random.Next(100);
                 Console.Write($"{arrayInt[i]} ");
@@ -61,13 +61,13 @@ namespace Task9v5
             }
 
             Console.WriteLine();
-            Console.WriteLine($"Max = {maxNumber} Min = {minNumber}");*/
+            Console.WriteLine($"Max = {maxNumber} Min = {minNumber}");
 
             //* Ввести два массива X и Y, состоящих из 10-ти элементов целого типа. 
             //* Сформировать массив S, состоящий из одинаковых элементов исходных 
             //* массивов.
 
-            /*int[] X = new int[10];
+            int[] X = new int[10];
             int[] Y = new int[10];
             int size = 0;
 
@@ -120,7 +120,7 @@ namespace Task9v5
             {
                 Console.Write($"{S[i]} ");
             }
-            Console.WriteLine();*/
+            Console.WriteLine();
 
 
             //* Дано дробное число в двоичной системе счисления, т.е. последователь-
@@ -156,6 +156,18 @@ namespace Task9v5
 
             Console.WriteLine($"{fractionalPartNumber}");
             Console.WriteLine($"{fractionalPartNumber % 10}");
+
+            string str = fractionalPartNumber.ToString(new System.Globalization.NumberFormatInfo() { NumberDecimalSeparator = "." });
+            int result = str.Contains(".") ? str.Remove(0, Math.Truncate(fractionalPartNumber).ToString().Length + 1).Length : 0;
+            Console.WriteLine($"{result}");
+
+            while (result > 0)
+            {
+                fractionalPartNumber *= 10;
+                result--;
+            }
+            Console.WriteLine($"{fractionalPartNumber}");
+
 
             int[] wholePartNumberArray = new int[size];
             tempWholeNumber = wholePartNumber;
